@@ -1,0 +1,74 @@
+<body>
+    <div>
+        <div class="container">
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-sm-6 col-lg-6 burbuja">
+              <h2 class="text-center">Carga masiva de Horas</h2>
+              <h2 class="text-center">Rangos no funciona</h2>
+              <form #horasmasivasForm="ngForm" (ngSubmit)="addHorasCancha(horasmasivasForm)" >
+                
+                <div class="col">
+                  <label for="input" class="form-label">Ingrese Fecha de inicio</label>
+                  <input type="date" class="form-control" 
+                  [(ngModel)]="horasmasivasService.selectedHorasMasivas.horacomienzo" name="horaComienzo"   />
+                </div>
+
+                <div class="col">
+                  <label for="input" class="form-label">Ingrese Fecha de Final</label>
+                  <input type="date" class="form-control"  
+                  [(ngModel)]="horasmasivasService.selectedHorasMasivas.horatermino"  name="horaTermino"/>
+                </div>
+
+                <div class="col">
+                    <label for="input" class="form-label"
+                    >Seleccione intervalo de atencion</label>
+                    <select class="form-select" aria-label="Default select example"
+                    [(ngModel)]="horasmasivasService.selectedHorasMasivas.intervalo" name="intervalo">
+                        <option [ngValue]="30">30 Minutos</option>
+                        <option [ngValue]="40">40 Minutos</option>
+                        <option [ngValue]="60">60 Minutos</option>
+                      </select>
+                </div>
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-success text-uppercase mt-2 text-center"
+                  >
+                    Agregar Horarios
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+
+          <div class="col burbuja">
+              <br>
+              <div class="table-responsive-md">
+                  <div class="scrollable">
+                      <table class="table table-bordered table-hover border-dark mt-2 text-center">
+                          <thead>
+                              <tr>
+                                  <th scope="col">Nombre</th>
+                                  <th scope="col">Rol</th>
+                              </tr>
+                          </thead>
+
+                          <tbody *ngFor="let cargamasi of horasmasivasService.cargamasi | ObjToArray">
+                              <tr >
+                                  <td>{{ cargamasi.dia }}</td>
+                                  <td>{{ cargamasi.hora }}</td>
+                                  <td>{{ cargamasi.disponibliliad }}</td>
+                                
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+              <br>
+          </div>
+      </div>
+      </div>
+</body>

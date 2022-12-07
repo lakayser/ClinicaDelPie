@@ -1,0 +1,29 @@
+body{
+    background-color: #d1e2fc;
+    font-family: 'Montserrat', sans-serif;
+    }
+    .burbuja{
+    
+        background-color: white;
+        margin-bottom: 20px;
+        box-shadow: 10px 10px 2px 5px rgba(0, 0, 0,.1);
+        border-radius: 15px;
+    }
+    .scrollable{
+        height: auto;
+        overflow: auto;
+        position: relative;
+        
+    }
+    .garficoScrollable{
+        overflow: auto;
+        position: relative;
+        
+    }
+    .mini{
+        
+        color: white;
+      }
+    .ngx-charts-bar-vertical-2d{
+        height: 100px;
+      }

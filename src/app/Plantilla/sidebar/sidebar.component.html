@@ -1,0 +1,98 @@
+<ng-container *ngIf="!apiService.loggedIn(); else loggedIn">
+
+    <app-header>
+
+    </app-header>
+    <div id="" class="toggled">
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid" style="padding-top: 80px;">
+
+                <router-outlet>
+
+                </router-outlet>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+
+</ng-container>
+
+<ng-template #loggedIn>
+
+    <app-header>
+
+    </app-header>
+
+    <div id="wrapper" >
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav" >
+                <!-- MODERATOR -->
+                <li class="sidebar-brand">
+                    <span>
+                       
+                    </span>
+                </li>
+                <li class="sidebar-item active">
+                    <a routerLink="/inicio" class='sidebar-link'>
+                        <i><span class="material-icons">
+                                space_dashboard
+                            </span></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a routerLink="/atencion" class='sidebar-link'>
+                        <i><span class="material-icons">
+                                space_dashboard
+                            </span></i>
+                        <span>Atencion</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a routerLink="/agenda" class='sidebar-link'>
+                        <i><span class="material-icons">
+                                space_dashboard
+                            </span></i>
+                        <span>Agenda</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a routerLink="/historial" class='sidebar-link'>
+                        <i><span class="material-icons">
+                                space_dashboard
+                            </span></i>
+                        <span>Historial</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a routerLink="/Admin" class='sidebar-link'>
+                        <i><span class="material-icons">
+                                space_dashboard
+                            </span></i>
+                        <span>Admin</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid" style="padding-top: 80px;" >
+
+                <router-outlet>
+
+                </router-outlet>
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+</ng-template>

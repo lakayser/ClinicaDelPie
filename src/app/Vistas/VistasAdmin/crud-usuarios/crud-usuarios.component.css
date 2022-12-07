@@ -1,0 +1,12 @@
+body{
+    background-color: #d1e2fc;
+    height:100vh;
+    font-family: 'Montserrat', sans-serif;
+    }
+    .burbuja{
+    
+        background-color: white;
+        margin-bottom: 20px;
+        box-shadow: 10px 10px 2px 5px rgba(0, 0, 0,.1);
+        border-radius: 15px;
+    }

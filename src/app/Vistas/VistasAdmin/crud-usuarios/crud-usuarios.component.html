@@ -1,0 +1,84 @@
+<body>
+    <section>
+        <div class="container text-center">
+            <br>
+            <h1>Agregar Usuario</h1>
+            <br>
+            <div class=" burbuja">
+
+                <form #usuarioForm="ngForm" (ngSubmit)="addUsuario(usuarioForm) " class="row g-3 mb-3">
+                    <input type="hidden" name="_id" [(ngModel)]="usuariosService.selectedUsuario._id">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="inputName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" name="userName"
+                            [(ngModel)]="usuariosService.selectedUsuario.userName">
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="inputroles" class="form-label">ROL</label>
+                        <select class="form-select" aria-label="Default select example" name="roles"
+                            [(ngModel)]="usuariosService.selectedUsuario.roles">
+                            <option *ngFor="let roles of usuariosService.roles |ObjToArray" [ngValue]="roles._id">
+                                {{roles.name}}</option>
+                        </select>
+
+                    </div>
+
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="inputpassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" name="password"
+                            [(ngModel)]="usuariosService.selectedUsuario.password">
+                    </div>
+                    <div class="text-center mb-3">
+
+                        <button type="submit" class="btn btn-danger text-uppercase" value="Guardar">Agregar
+                            Usuario</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <br>
+        <h1 class="text-center">Lista De Usuarios </h1>
+        <br>
+
+        <div class="container text-center">
+
+            <div class="col burbuja">
+                <br>
+                <div class="table-responsive-md">
+                    <div class="scrollable">
+                        <table class="table table-bordered table-hover border-dark mt-2 text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Rol</th>
+                                </tr>
+                            </thead>
+
+                            <tbody *ngFor="let users of usuariosService.users | ObjToArray">
+                                <tr >
+                                    <td>{{ users.userName }}</td>
+                                    <td *ngFor="let a of users.roles">{{ a.name }}</td>
+                                    <td class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                        <button type="button" class="btn btn-danger active"
+                                           >eliminar</button>
+
+                                        <button type="button" class="btn btn-success active">Editar</button>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+
+    </section>
+
+
+
+</body>
