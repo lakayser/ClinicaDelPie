@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row row-cols-7 text-center fw-bold mt-1" *ngFor="let hora of horas">
+    <div class="col">
+      <div *ngIf="hora.dia === 'viernes' && hora.semana === 50">
+        <div class="pt-1 pb-2 dias-disp mb-2" *ngIf="hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Disponible</span>
+        </div>
+        <div class="pt-1 pb-2 mb-1 dias-noDisp" *ngIf="!hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Agendado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div *ngIf="hora.dia === 'viernes' && hora.semana === 50">
+        <div class="pt-1 pb-2 dias-disp" *ngIf="hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Disponible</span>
+        </div>
+        <div class="pt-1 pb-2 mb-1 dias-noDisp" *ngIf="!hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Agendado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div *ngIf="hora.dia === 'viernes' && hora.semana === 50">
+        <div class="pt-1 pb-2 dias-disp" *ngIf="hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Disponible</span>
+        </div>
+        <div class="pt-1 pb-2 mb-1 dias-noDisp" *ngIf="!hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Agendado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div *ngIf="hora.dia === 'viernes' && hora.semana === 50">
+        <div class="pt-1 pb-2 dias-disp" *ngIf="hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Disponible</span>
+        </div>
+        <div class="pt-1 pb-2 mb-1 dias-noDisp" *ngIf="!hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Agendado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div *ngIf="hora.dia === 'viernes' && hora.semana === 50">
+        <div class="pt-1 pb-2 dias-disp" *ngIf="hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Disponible</span>
+        </div>
+        <div class="pt-1 pb-2 mb-1 dias-noDisp" *ngIf="!hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Agendado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div *ngIf="hora.dia === 'viernes' && hora.semana === 50">
+        <div class="pt-1 pb-2 dias-disp" *ngIf="hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Disponible</span>
+        </div>
+        <div class="pt-1 pb-2 mb-1 dias-noDisp" *ngIf="!hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Agendado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div *ngIf="hora.dia === 'viernes' && hora.semana === 50">
+        <div class="pt-1 pb-2 dias-disp" *ngIf="hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Disponible</span>
+        </div>
+        <div class="pt-1 pb-2 mb-1 dias-noDisp" *ngIf="!hora.disponibilidad">
+          <span>{{ hora.hora }}</span>
+          <br>
+          <span>Agendado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

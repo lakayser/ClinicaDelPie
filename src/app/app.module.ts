@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './Plantilla/sidebar/sidebar.component';
 import { HeaderComponent } from './Plantilla/header/header.component';
 import { DashboardComponent } from './Vistas/dashboard/dashboard.component';
-import { CalendarioComponent } from './Vistas/calendario/calendario.component';
 import { AgendaComponent } from './Vistas/agenda/agenda.component';
 import { AtencionComponent } from './Vistas/atencion/atencion.component';
 import { HistorialComponent } from './Vistas/historial/historial.component';
@@ -20,33 +19,34 @@ import { TokenInterceptorService } from './Servicios/token-interceptor.service';
 import { CrudUsuariosComponent } from './Vistas/VistasAdmin/crud-usuarios/crud-usuarios.component';
 import { ObjToArrayPipe } from './obj-to-array.pipe';
 import { FooterComponent } from './Plantilla/footer/footer.component';
-
+import { CalendarioModule } from './Vistas/calendario/calendario.module';
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     HeaderComponent,
     DashboardComponent,
-    CalendarioComponent,
     AgendaComponent,
     AtencionComponent,
     HistorialComponent,
     LoginComponent,
     CrudUsuariosComponent,
     ObjToArrayPipe,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    CalendarioModule,
   ],
-  providers: [ AuthGuard, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true
+  providers:
+    [ AuthGuard, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
   }],
   bootstrap: [AppComponent]
 })
