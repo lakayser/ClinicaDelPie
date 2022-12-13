@@ -1,98 +1,77 @@
-<ng-container *ngIf="!apiService.loggedIn(); else loggedIn">
 
-    <app-header>
+<p-sidebar [(visible)]="display" position="left" [transitionOptions]="'500ms'" >
+    <div class="sidebar-item">
+        <a routerLink="/inicio" class='sidebar-link'>
+            <i><span class="material-icons">
+                    space_dashboard
+                </span></i>
+            <span>Inicio</span>
+        </a>
+    </div>
 
-    </app-header>
-    <div id="" class="toggled">
+    <div class="sidebar-item">
+        <a routerLink="/atencion" class='sidebar-link'>
+            <i><span class="material-icons">
+                    space_dashboard
+                </span></i>
+            <span>Atencion</span>
+        </a>
+    </div>
+   
+    <div class="sidebar-item ">
+        <a routerLink="/agenda" class='sidebar-link'>
+            <i><span class="material-icons">
+                    space_dashboard
+                </span></i>
+            <span>Agenda</span>
+        </a>
+    </div>
+    <div class="sidebar-item">
+        <a routerLink="/historial" class='sidebar-link'>
+            <i><span class="material-icons">
+                    space_dashboard
+                </span></i>
+            <span>Historial</span>
+        </a>
+    </div>
+    <div class="sidebar-item">
+        <a routerLink="/Admin" class='sidebar-link'>
+            <i><span class="material-icons">
+                    space_dashboard
+                </span></i>
+            <span>Admin</span>
+        </a>
+    </div>
+    <ng-template pTemplate="footer"> <button type="button" class="btn btn-danger ml-2" (click)="apiService.logout()">
+        <span class="material-icons">
+          logout
+          </span>
+        Cerrar
+        Sesion</button></ng-template>
+</p-sidebar>
 
-        <div id="page-content-wrapper">
-            <div class="container-fluid" style="padding-top: 80px;">
+<p-toolbar styleClass="toolbarS">
+<ng-container *ngIf="!apiService.loggedIn();else loggedIn" >
 
-                <router-outlet>
-
-                </router-outlet>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-
+    <img src="../../../assets/logo.jpg" alt="" width="250" height="50">
+    <div class="p-toolbar-group-right">
+    
     </div>
 
 </ng-container>
 
 <ng-template #loggedIn>
-
-    <app-header>
-
-    </app-header>
-
-    <div id="wrapper" >
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav" >
-                <!-- MODERATOR -->
-                <li class="sidebar-brand">
-                    <span>
-                       
-                    </span>
-                </li>
-                <li class="sidebar-item active">
-                    <a routerLink="/inicio" class='sidebar-link'>
-                        <i><span class="material-icons">
-                                space_dashboard
-                            </span></i>
-                        <span>Inicio</span>
-                    </a>
-                </li>
-                <li class="sidebar-item active">
-                    <a routerLink="/atencion" class='sidebar-link'>
-                        <i><span class="material-icons">
-                                space_dashboard
-                            </span></i>
-                        <span>Atencion</span>
-                    </a>
-                </li>
-                <li class="sidebar-item active">
-                    <a routerLink="/agenda" class='sidebar-link'>
-                        <i><span class="material-icons">
-                                space_dashboard
-                            </span></i>
-                        <span>Agenda</span>
-                    </a>
-                </li>
-                <li class="sidebar-item active">
-                    <a routerLink="/historial" class='sidebar-link'>
-                        <i><span class="material-icons">
-                                space_dashboard
-                            </span></i>
-                        <span>Historial</span>
-                    </a>
-                </li>
-                <li class="sidebar-item active">
-                    <a routerLink="/Admin" class='sidebar-link'>
-                        <i><span class="material-icons">
-                                space_dashboard
-                            </span></i>
-                        <span>Admin</span>
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid" style="padding-top: 80px;" >
-
-                <router-outlet>
-
-                </router-outlet>
-
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-
+    <div class="p-toolbar-group-left" >
+        <button pButton  (click)="display = true" class="p-button p-button-lg p-button-success" icon="pi pi-bars" ></button>
     </div>
+    <img src="../../../assets/logo.jpg" alt="" width="250" height="50">
+    <div class="p-toolbar-group-right">
+    
+    </div>
+
 </ng-template>
+</p-toolbar>
+
+
+
+<router-outlet></router-outlet>

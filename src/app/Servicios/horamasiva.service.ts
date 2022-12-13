@@ -39,6 +39,13 @@ export class HoramasivaService {
   getCargaMasiva(){
     return this.http.get<CargaMasiva[]>(`${this.URL}listar-horas`)
   }
-
-
+  getCargaMasivaEspe(id:string){
+    return this.http.get<CargaMasiva[]>(`${this.URL}listar-hora-especifica/${id}`)
+  }
+  editCargaMasiva(cargamasiva:CargaMasiva){
+    return this.http.put(`${this.URL}editar-horas/${cargamasiva._id}`, cargamasiva)
+  }
+  deleteCargaMasiva(id: string){
+    return this.http.delete(`${this.URL}eliminar-hora/${id}`)
+  }
 }

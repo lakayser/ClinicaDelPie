@@ -20,6 +20,12 @@ import { TokenInterceptorService } from './Servicios/token-interceptor.service';
 import { CrudUsuariosComponent } from './Vistas/VistasAdmin/crud-usuarios/crud-usuarios.component';
 import { ObjToArrayPipe } from './obj-to-array.pipe';
 import { FooterComponent } from './Plantilla/footer/footer.component';
+import {ButtonModule} from 'primeng/button';
+import {SidebarModule} from 'primeng/sidebar';
+import {TableModule} from 'primeng/table';
+import {ToolbarModule} from 'primeng/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -38,10 +44,15 @@ import { FooterComponent } from './Plantilla/footer/footer.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    ButtonModule,
+    SidebarModule,
+    TableModule,
+    ToolbarModule
   ],
   providers: [ AuthGuard, {
     provide: HTTP_INTERCEPTORS,
