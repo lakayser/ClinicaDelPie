@@ -20,8 +20,6 @@ export class DiasCalendarioComponent {
     'martes',
     'miércoles',
     'jueves',
-    'viernes',
-    'sábado',
-    'domingo',
+    'viernes'
   ];
 }

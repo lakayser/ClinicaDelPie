@@ -30,6 +30,7 @@ export class CalendarioComponent implements OnInit {
         console.log( this.horas );
       });
   }
+  
 
   numeroSemana (fecha: any) {
     const dia_en_mili_segundos = 1000 * 60 * 60 * 24,

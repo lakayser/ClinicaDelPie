@@ -25,5 +25,9 @@ export class AtencionService {
     return this.http.post(`${this.URL}registrar-atencion`, atencion);
 
   }
+  getAtencionEsp(id:string): Observable<Atencion[]>{
+    return this.http.get<Atencion[]>(`${this.URL}listar-atencion/${id}`)
+  }
+
 
 }

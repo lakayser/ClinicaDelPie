@@ -7,6 +7,7 @@ import { AtencionComponent } from './Vistas/atencion/atencion.component';
 import { HistorialComponent } from './Vistas/historial/historial.component';
 import { CrudUsuariosComponent } from './Vistas/VistasAdmin/crud-usuarios/crud-usuarios.component';
 import { CalendarioComponent } from './Vistas/calendario/pages/calendario/calendario.component';
+import { DetallesComponent } from './Vistas/detalles/detalles.component';
 
 const routes: Routes = [
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'atencion', component: AtencionComponent},
   {path: 'historial', component: HistorialComponent},
   {path: 'calendario', component: CalendarioComponent},
+  {path: 'detalles/:id', component: DetallesComponent},
   {path: 'Admin', component:CrudUsuariosComponent},
 
   { path: '**'                 , redirectTo: '', pathMatch: 'full' }

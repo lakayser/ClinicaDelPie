@@ -28,7 +28,10 @@ export class LoginComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token,);
-       
+          localStorage.setItem('rol', res.rol);
+          var rol = localStorage.getItem('rol')
+          console.log(rol)
+          this.router.navigate(['/inicio'])
 
         })
   }

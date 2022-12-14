@@ -1,8 +1,9 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, NgForm } from '@angular/forms'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,12 @@ import { ObjToArrayPipe } from './obj-to-array.pipe';
 import { FooterComponent } from './Plantilla/footer/footer.component';
 import { CalendarioModule } from './Vistas/calendario/calendario.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ButtonModule} from 'primeng/button';
+import {SidebarModule} from 'primeng/sidebar';
+import {TableModule} from 'primeng/table';
+import {ToolbarModule} from 'primeng/toolbar';
+import { DetallesComponent } from './Vistas/detalles/detalles.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +42,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CrudUsuariosComponent,
     ObjToArrayPipe,
     FooterComponent,
+    DetallesComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +52,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     NgxChartsModule,
     CalendarioModule,
+    ButtonModule,
+    SidebarModule,
+    TableModule,
+    ToolbarModule,
+    ReactiveFormsModule,
+   
   ],
   providers:
     [ AuthGuard, {
