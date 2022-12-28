@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Atencion } from 'src/app/Modelos/atencion';
 import { AtencionService } from 'src/app/Servicios/atencion.service';
-
+import { Paciente } from 'src/app/Modelos/paciente';
+import { PacienteService } from 'src/app/Servicios/paciente.service';
 
 @Component({
   selector: 'app-detalles',
@@ -13,7 +14,12 @@ export class DetallesComponent implements OnInit{
   cosa: any={};
 
   Reserva: Atencion[]
-constructor(private router: Router,private route:ActivatedRoute,public atencionService:AtencionService){}
+  paciente: Paciente[]
+  atencion: Atencion[]
+
+  observaciones: string | null ;
+
+constructor(private router: Router,private route:ActivatedRoute,public atencionService:AtencionService, public pacienteService:PacienteService){}
 
 
 ngOnInit(): void {
@@ -26,6 +32,7 @@ ngOnInit(): void {
       this.getID(id);
      
     });
+    this.listarAtenciones();
 }
 
 getAtenciones(){
@@ -37,10 +44,25 @@ getAtenciones(){
 
 getID(id:any){
   
-  this.atencionService.getAtencionEsp(id).subscribe((res)=>{
-    this.Reserva=res;
+  this.pacienteService.getPacienteID(id).subscribe((res)=>{
+    this.paciente=res;
     console.log(res)
   })
 }
+goAtencion(paciente:Paciente){
+  console.log(paciente._id)
+  this.router.navigate(['/atencion', paciente._id])
 
+}
+listarAtenciones(){
+  this.atencionService.getAtencion().subscribe((res)=>{
+    this.atencion=res;
+    res.map(a=>{
+      if (a.paciente == this.cosa) {
+        console.log(a)
+        this.observaciones = a.observaciones;
+      }
+    })
+  })
+}
 }

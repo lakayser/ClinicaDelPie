@@ -74,6 +74,7 @@ export class HorasCalendarioComponent implements OnInit{
     this.tomarHora.createHoraTomada(this.horaId,form.value)
       .subscribe(form=>{
         console.log(form)
+        this.display = false;
 
       })
   }

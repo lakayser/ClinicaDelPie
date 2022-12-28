@@ -4,12 +4,14 @@
 
       <div *ngFor="let hora of horas">
         <div *ngIf="hora.dia === 'lunes' && hora.semana === semana">
-          <div class="pt-1 pb-2 dias-disp mb-2 cursor-dialog" (click)="showDialog()" (click)="obtenerId(hora._id)" *ngIf="hora.disponibilidad">
+          <div class="pt-1 pb-2 dias-disp mb-2 cursor-dialog" (click)="showDialog()" (click)="obtenerId(hora._id)"
+            *ngIf="hora.disponibilidad">
             <span>{{ hora.hora }}</span>
             <br>
             <span>Disponible</span>
           </div>
-          <div class="pt-1 pb-2 mb-1 dias-noDisp cursor-dialog" (click)="showDialog2()" (click)="obtenerId(hora._id)"  (click)="obtenerRut(hora._id)" *ngIf="!hora.disponibilidad">
+          <div class="pt-1 pb-2 mb-1 dias-noDisp cursor-dialog" (click)="showDialog2()" (click)="obtenerId(hora._id)"
+            (click)="obtenerRut(hora._id)" *ngIf="!hora.disponibilidad">
             <span>{{ hora.hora }}</span>
             <br>
             <span>Agendado</span>
@@ -21,12 +23,14 @@
     <div class="col">
       <div *ngFor="let hora of horas">
         <div *ngIf="hora.dia === 'martes' && hora.semana === semana">
-          <div class="pt-1 pb-2 dias-disp mb-2 cursor-dialog" (click)="showDialog()" (click)="obtenerId(hora._id)" *ngIf="hora.disponibilidad">
+          <div class="pt-1 pb-2 dias-disp mb-2 cursor-dialog" (click)="showDialog()" (click)="obtenerId(hora._id)"
+            *ngIf="hora.disponibilidad">
             <span>{{ hora.hora }}</span>
             <br>
             <span>Disponible</span>
           </div>
-          <div class="pt-1 pb-2 mb-1 dias-noDisp cursor-dialog" (click)="showDialog2()" (click)="obtenerId(hora._id)"  (click)="obtenerRut(hora._id)" *ngIf="!hora.disponibilidad">
+          <div class="pt-1 pb-2 mb-1 dias-noDisp cursor-dialog" (click)="showDialog2()" (click)="obtenerId(hora._id)"
+            (click)="obtenerRut(hora._id)" *ngIf="!hora.disponibilidad">
             <span>{{ hora.hora }}</span>
             <br>
             <span>Agendado</span>
@@ -38,12 +42,14 @@
     <div class="col">
       <div *ngFor="let hora of horas">
         <div *ngIf="hora.dia === 'miércoles' && hora.semana === semana">
-          <div class="pt-1 pb-2 dias-disp mb-2 cursor-dialog" (click)="showDialog()" (click)="obtenerId(hora._id)" *ngIf="hora.disponibilidad">
+          <div class="pt-1 pb-2 dias-disp mb-2 cursor-dialog" (click)="showDialog()" (click)="obtenerId(hora._id)"
+            *ngIf="hora.disponibilidad">
             <span>{{ hora.hora }}</span>
             <br>
             <span>Disponible</span>
           </div>
-          <div class="pt-1 pb-2 mb-1 dias-noDisp cursor-dialog" (click)="showDialog2()" (click)="obtenerId(hora._id)"  (click)="obtenerRut(hora._id)" *ngIf="!hora.disponibilidad">
+          <div class="pt-1 pb-2 mb-1 dias-noDisp cursor-dialog" (click)="showDialog2()" (click)="obtenerId(hora._id)"
+            (click)="obtenerRut(hora._id)" *ngIf="!hora.disponibilidad">
             <span>{{ hora.hora }}</span>
             <br>
             <span>Agendado</span>
@@ -55,12 +61,14 @@
     <div class="col">
       <div *ngFor="let hora of horas">
         <div *ngIf="hora.dia === 'jueves' && hora.semana === semana">
-          <div class="pt-1 pb-2 dias-disp mb-2 cursor-dialog" (click)="showDialog()" (click)="obtenerId(hora._id)" *ngIf="hora.disponibilidad">
+          <div class="pt-1 pb-2 dias-disp mb-2 cursor-dialog" (click)="showDialog()" (click)="obtenerId(hora._id)"
+            *ngIf="hora.disponibilidad">
             <span>{{ hora.hora }}</span>
             <br>
             <span>Disponible</span>
           </div>
-          <div class="pt-1 pb-2 mb-1 dias-noDisp cursor-dialog" (click)="showDialog2()" (click)="obtenerId(hora._id)"  (click)="obtenerRut(hora._id)" *ngIf="!hora.disponibilidad">
+          <div class="pt-1 pb-2 mb-1 dias-noDisp cursor-dialog" (click)="showDialog2()" (click)="obtenerId(hora._id)"
+            (click)="obtenerRut(hora._id)" *ngIf="!hora.disponibilidad">
             <span>{{ hora.hora }}</span>
             <br>
             <span>Agendado</span>
@@ -71,13 +79,15 @@
 
     <div class="col">
       <div *ngFor="let hora of horas">
-        <div *ngIf="hora.dia === 'viernes' && hora.semana === semana" >
-          <div class="pt-1 pb-2 dias-disp mb-2 cursor-dialog" (click)="showDialog()" (click)="obtenerId(hora._id)" *ngIf="hora.disponibilidad">
+        <div *ngIf="hora.dia === 'viernes' && hora.semana === semana">
+          <div class="pt-1 pb-2 dias-disp mb-2 cursor-dialog" (click)="showDialog()" (click)="obtenerId(hora._id)"
+            *ngIf="hora.disponibilidad">
             <span>{{ hora.hora }}</span>
             <br>
             <span>Disponible</span>
           </div>
-          <div class="pt-1 pb-2 mb-1 dias-noDisp cursor-dialog" (click)="showDialog2()" (click)="obtenerId(hora._id)"  (click)="obtenerRut(hora._id)" *ngIf="!hora.disponibilidad">
+          <div class="pt-1 pb-2 mb-1 dias-noDisp cursor-dialog" (click)="showDialog2()" (click)="obtenerId(hora._id)"
+            (click)="obtenerRut(hora._id)" *ngIf="!hora.disponibilidad">
             <span>{{ hora.hora }}</span>
             <br>
             <span>Agendado</span>
@@ -89,33 +99,23 @@
   </div>
 </div>
 
-<p-dialog header="Title" [(visible)]="display">
+<p-dialog header="Agendar esta Hora" [(visible)]="display">
 
   <div>
     <form #horaForm="ngForm" (ngSubmit)=" posthoraReservada( horaForm ) ">
-
-      <label for="rut"> Ingresar rut: </label>
-
-      <input
-        type="text"
-        name="rut"
-        id="rut"
-        (ngModel)="rut">
-        <label for="rut"> Ingresar nombre: </label>
-      <input
-      type="text"
-      name="nombre"
-      id="nombre"
-      (ngModel)="nombre">
-      <label for="rut"> Ingresar numero: </label>
-    <input
-    type="text"
-    name="numero"
-    id="numero"
-    (ngModel)="numero">
-   
-
-        <button type="submit" class="btn btn-primary" (click)="display=false"> Agendar </button>
+      <div class="mb-3">
+        <label for="rut" class="form-label">Ingresar nombre:</label>
+        <input type="text" class="form-control" name="nombre" id="nombre" (ngModel)="nombre" >
+      </div>
+      <div class="mb-3">
+        <label for="rut" class="form-label">Ingresar rut:</label>
+        <input type="text" class="form-control" name="rut" id="rut" (ngModel)="rut" >
+      </div>
+      <div class="mb-3">
+        <label for="rut" class="form-label">Ingresar numero:</label>
+        <input type="text" class="form-control" name="numero" id="numero" (ngModel)="numero" >
+      </div>
+      <button type="submit" class="btn btn-primary"> Agendar </button>
     </form>
   </div>
 
@@ -126,6 +126,10 @@
   <div>
     <p>Rut del paciente: {{rut2}}</p>
   </div>
-  <div><p>Nombre del paciente: {{nombre}}</p> </div>
-  <div><p>Telefono del paciente: {{numero}}</p></div>
+  <div>
+    <p>Nombre del paciente: {{nombre}}</p>
+  </div>
+  <div>
+    <p>Telefono del paciente: {{numero}}</p>
+  </div>
 </p-dialog>

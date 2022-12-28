@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AtencionService } from 'src/app/Servicios/atencion.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, NgForm, Validators } from '@angular/forms';
+import { PacienteService } from 'src/app/Servicios/paciente.service';
+import { Paciente } from 'src/app/Modelos/paciente';
+import { Atencion } from 'src/app/Modelos/atencion';
 
 @Component({
   selector: 'app-atencion',
@@ -11,26 +14,42 @@ import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, NgForm, Valid
 })
 export class AtencionComponent implements OnInit {
 
+  cosa: any={};
+
   atencionformu = new UntypedFormGroup({
-    nombre: new UntypedFormControl(''),
-    Edad: new UntypedFormControl(''),
-    numeroContacto: new UntypedFormControl(''),
-    numeroEmergencia: new UntypedFormControl(''),
-    rut: new UntypedFormControl(''),
-    enfermedadR: new UntypedFormControl(''),
     observaciones: new UntypedFormControl(''),
-    tratamiento: new UntypedFormControl('')
+    tratamiento: new UntypedFormControl(''),
+    procedimiento: new UntypedFormControl('')
   })
 
+  paciente: Paciente[]
+  
+  atencion:Atencion[]
 
-  constructor(private route: Router, private router: Router, private atencionService: AtencionService) { }
+  constructor(private route:ActivatedRoute, private router: Router, private atencionService: AtencionService, public pacienteService:PacienteService) { }
 
   ngOnInit(): void {
+    let BN = this.route.snapshot.paramMap.get('id');
+    this.cosa = BN;
+     console.log(this.cosa)
+    
+    this.route.paramMap.subscribe(params => {
+      var id = params.get('id');
+      this.getID(id);
+      // console.log(this.getID(id))
+     
+    });
   }
+
   submit(){
-    this.atencionService.postAtencion(this.atencionformu.value).subscribe((res)=>{
+    this.atencionService.postAtencion(this.cosa, this.atencionformu.value).subscribe((res)=>{
       console.log(res);
-      this.router.navigate(['/inicio'])
+    })
+  }
+  getID(id:any){
+    this.pacienteService.getPacienteID(id).subscribe((res)=>{
+      this.paciente=res;
+      // console.log('hola',res)
     })
   }
   

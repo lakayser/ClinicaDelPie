@@ -12,6 +12,16 @@ export class PacienteService {
   URL: string = 'http://localhost:8080/Clinica/';
 
   paciente:Paciente[];
+
+  selectedPaciente: Paciente ={
+    _id: '',
+    nombre: '',
+    fechaNac: '',
+    numeroContacto: '',
+    numeroEmergencia: '',
+    rut: '',
+    enfermedadR: ''
+  }
   
   private httpheaders = new HttpHeaders({'Content-Type' : 'aplication/json'});
 
@@ -21,6 +31,9 @@ export class PacienteService {
 
   getPaciente(){
     return this.http.get<Paciente[]>(`${this.URL}listar-pacientes`);
+  }
+  getPacienteID(id:string):Observable<Paciente[]>{
+    return this.http.get<Paciente[]>(`${this.URL}listar-paciente/${id}`)
   }
 
   createPaciente(paciente: Paciente){

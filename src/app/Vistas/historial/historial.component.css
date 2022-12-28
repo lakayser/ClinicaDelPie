@@ -5,7 +5,7 @@ body{
     }
     .burbuja{
     
-        background-color: white;
+        background-color: rgba(161, 158, 158, 0.404);
         margin-bottom: 20px;
         box-shadow: 10px 10px 2px 5px rgba(0, 0, 0,.1);
         border-radius: 15px;

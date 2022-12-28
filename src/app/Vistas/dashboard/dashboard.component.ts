@@ -68,30 +68,30 @@ export class DashboardComponent implements OnInit {
     "name": "CLinica Del Pie",
     "series": [
       {
-        "value": 1264,
+        "value": 50,
         "name": "Enero"
       },
       {
-        "value": 2423,
+        "value": 75,
         "name": "Febrero"
       },
       {
-        "value": 3454,
+        "value": 80,
         "name": "Marzo"
       },
       {
-        "value": 4927,
+        "value": 55,
         "name": "Abril"
       },{
-        "value": 5727,
+        "value": 100,
         "name": "Mayo"
       },
       {
-        "value": 6527,
+        "value": 80,
         "name": "Junio"
       },
       {
-        "value": 7927,
+        "value": 56,
         "name": "Julio"
       }
     ]

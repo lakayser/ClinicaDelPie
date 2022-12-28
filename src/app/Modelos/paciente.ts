@@ -1,9 +1,9 @@
 export interface Paciente{
-    _id: '',
+    _id: string,
     nombre: '',
     fechaNac: '',
     numeroContacto: '',
     numeroEmergencia: '',
     rut: '',
-    atenciones: ''
+    enfermedadR:        string
 }

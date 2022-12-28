@@ -27,6 +27,9 @@ import {SidebarModule} from 'primeng/sidebar';
 import {TableModule} from 'primeng/table';
 import {ToolbarModule} from 'primeng/toolbar';
 import { DetallesComponent } from './Vistas/detalles/detalles.component';
+import { FilterPipe } from './filter.pipe';
+import {TabViewModule} from 'primeng/tabview';
+
 
 
 @NgModule({
@@ -43,6 +46,7 @@ import { DetallesComponent } from './Vistas/detalles/detalles.component';
     ObjToArrayPipe,
     FooterComponent,
     DetallesComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +61,7 @@ import { DetallesComponent } from './Vistas/detalles/detalles.component';
     TableModule,
     ToolbarModule,
     ReactiveFormsModule,
+    TabViewModule
    
   ],
   providers:

@@ -1,59 +1,77 @@
+<section class="section section-lg" *ngFor="let paciente of paciente ">
+  <div class="container">
 
-
-    
-    <section class="section section-lg" *ngFor="let Reserva of Reserva ">
-      <div class="container" >
-  
-        <div class="row">
-          <div class="burbuja" >
-            <div class="row text-center">
-              <span class="h2">DETALLES PUBLICADOS</span>
-            </div>
-            <div class="row card-text">
-              <div class="col-sm-2 ">
-                <span class="h5">Inicio del Torneo:</span>
-              </div>
-              <div class="col-sm-4 mb-3">
-                <span class="h6">El Torneo comienza el {{Reserva.nombre}} </span>
-              </div>
-              <div class="col-sm-2">
-                <span class="h5">Lugar:</span>
-              </div>
-              <div class="col-sm-4 mb-3">
-                <span class="h6">El Torneo se jugara en  </span>
-              </div>
-              <div class="col-sm-2 mb-3">
-                <span class="h5">Inicio de inscripciones:</span>
-              </div>
-              <div class="col-sm-4 mb-3">
-                <span class="h6"></span>
-              </div>
-              <div class="col-sm-2 mb-3">
-                <span class="h5">Fin de Inscripciones:</span>
-              </div>
-              <div class="col-sm-4 mb-3">
-                <span class="h6"></span>
-              </div>
-              <div class="col-sm-2 mb-3">
-                <span class="h5">Categoria del torneo:</span>
-              </div>
-              <div class="col-sm-4 mb-3">
-                <span class="h6" ></span>
-              </div>
-              <div class="col-sm-2 mb-3">
-                <span class="h5">Limite de parejas:</span>
-              </div>
-              <div class="col-sm-4 mb-3">
-                <span class="h6"></span>
-              </div>
-              <div class="col-sm-2">
-                <span class="h5">Detalles:</span>
-              </div>
-              <div class="col-sm-4 mb-3">
-                <span class="h6"></span>
-              </div>
-            </div>
+    <div class="row">
+      <div class="burbuja">
+        <div class="row text-center">
+          <span class="h2">DETALLES PUBLICADOS</span>
+        </div>
+        <div class="row card-text">
+          <div class="col-sm-2 ">
+            <span class="h5">Nombre del Paciente:</span>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <span class="h6">{{paciente.nombre}} </span>
+          </div>
+          <div class="col-sm-2">
+            <span class="h5">Fecha de nacimiento:</span>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <span class="h6">{{paciente.fechaNac}}</span>
+          </div>
+          <div class="col-sm-2 mb-3">
+            <span class="h5">Numero Personal:</span>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <span class="h6">{{paciente.numeroContacto}}</span>
+          </div>
+          <div class="col-sm-2 mb-3">
+            <span class="h5">Numero de emergencia:</span>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <span class="h6">{{paciente.numeroEmergencia}}</span>
+          </div>
+          <div class="col-sm-2 mb-3">
+            <span class="h5">rut del paciente:</span>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <span class="h6">{{paciente.rut}}</span>
+          </div>
+          <div class="col-sm-2 mb-3">
+            <span class="h5">Enfermedad Relevante:</span>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <span class="h6">{{paciente.enfermedadR}}</span>
           </div>
         </div>
-  
       </div>
+    </div>
+
+    <button type="button" (click)="goAtencion(paciente)" class="btn btn-primary">Primary</button>
+  </div>
+</section>
+<section>
+  <div>
+    <div class="table-responsive-md">
+      <div class="scrollable">
+          <table class="table table-bordered table-hover border-dark mt-2 text-center">
+              <thead>
+                  <tr>
+                      <th scope="col">Rut Paciente</th>
+                      <th scope="col">Nombre Paciente</th>
+                      <th scope="col">Detalles</th>
+                  </tr>
+              </thead>
+
+              <tbody >
+                  <tr >
+                      <td>{{observaciones}}</td>
+                      <td></td>
+
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+  </div>
+</section>

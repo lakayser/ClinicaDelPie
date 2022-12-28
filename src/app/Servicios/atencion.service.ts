@@ -17,12 +17,13 @@ export class AtencionService {
   constructor(private http:HttpClient) { }
 
 
-  getAtencion(){
+  getAtencion(): Observable<Atencion[]>{
     return this.http.get<Atencion[]>(`${this.URL}listar-atenciones`);
   }
 
-  postAtencion(atencion: Atencion){
-    return this.http.post(`${this.URL}registrar-atencion`, atencion);
+
+  postAtencion(id: string,atencion: Atencion){
+    return this.http.post(`${this.URL}registrar-atencion/${id}`, atencion);
 
   }
   getAtencionEsp(id:string): Observable<Atencion[]>{

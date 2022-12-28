@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'inicio', component: DashboardComponent},
   {path: 'agenda', component: AgendaComponent},
-  {path: 'atencion', component: AtencionComponent},
+  {path: 'atencion/:id', component: AtencionComponent},
   {path: 'historial', component: HistorialComponent},
   {path: 'calendario', component: CalendarioComponent},
   {path: 'detalles/:id', component: DetallesComponent},

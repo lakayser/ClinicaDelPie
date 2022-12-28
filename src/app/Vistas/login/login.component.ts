@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   user={
-    nameUser:'',
+    userName:'',
     password: ''
   }
 
@@ -28,9 +28,9 @@ export class LoginComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token,);
-          localStorage.setItem('rol', res.rol);
-          var rol = localStorage.getItem('rol')
-          console.log(rol)
+          localStorage.setItem('rolx', res.rolx);
+          var rolx = localStorage.getItem('rolx')
+          console.log(rolx)
           this.router.navigate(['/inicio'])
 
         })
