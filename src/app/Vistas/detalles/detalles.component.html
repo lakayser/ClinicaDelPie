@@ -1,8 +1,8 @@
-<section class="section section-lg" *ngFor="let paciente of paciente ">
-  <div class="container">
+<section class="section section-lg" >
+  <div class="container" *ngFor="let paciente of paciente ">
 
     <div class="row">
-      <div class="burbuja">
+      <div class="burbuja" style="background-color: aliceblue;">
         <div class="row text-center">
           <span class="h2">DETALLES PUBLICADOS</span>
         </div>
@@ -47,26 +47,27 @@
       </div>
     </div>
 
-    <button type="button" (click)="goAtencion(paciente)" class="btn btn-primary">Primary</button>
+    <button type="button" (click)="goAtencion(paciente)" class="btn btn-primary">Realizar Atencion </button>
   </div>
 </section>
 <section>
   <div>
     <div class="table-responsive-md">
       <div class="scrollable">
-          <table class="table table-bordered table-hover border-dark mt-2 text-center">
+          <table class="table table-bordered table-hover border-dark mt-2 text-center" style="background-color: aliceblue;">
               <thead>
                   <tr>
-                      <th scope="col">Rut Paciente</th>
-                      <th scope="col">Nombre Paciente</th>
-                      <th scope="col">Detalles</th>
+                      <th scope="col">Observaciones</th>
+                      <th scope="col">Procedimiento</th>
+                      <th scope="col">Tratamiento</th>
                   </tr>
               </thead>
 
-              <tbody >
-                  <tr >
-                      <td>{{observaciones}}</td>
-                      <td></td>
+              <tbody *ngFor="let atencion of atencion">
+                  <tr *ngIf="atencion.paciente == cosa">
+                      <td>{{atencion.observaciones}}</td>
+                      <td>{{atencion.procedimiento}}</td>
+                      <td>{{atencion.tratamiento}}</td>
 
                   </tr>
               </tbody>

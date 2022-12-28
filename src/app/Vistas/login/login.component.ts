@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/Servicios/api.service';
 import { NgForm } from '@angular/forms';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -32,9 +32,31 @@ export class LoginComponent implements OnInit {
           var rolx = localStorage.getItem('rolx')
           console.log(rolx)
           this.router.navigate(['/inicio'])
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Bienvenido',
+            showConfirmButton: false,
+            timer: 1200,
+            timerProgressBar: true,
 
-        })
+            
+          }).then(() => {
+            window.location.reload()});
+
+        },
+        err => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: err.error.message,
+            timer: 2500
+          });
+        }
+        )
+        
   }
+   
 
 }
  

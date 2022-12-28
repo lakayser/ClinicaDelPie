@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TomarhoraService } from 'src/app/Servicios/tomarhora.service';
+import { HoraReservadas } from 'src/app/Modelos/horareservada';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  hora:HoraReservadas[];
+
   resizeChart(width: any): void {
     this.view = [width, 320]
   }
@@ -68,37 +72,25 @@ export class DashboardComponent implements OnInit {
     "name": "CLinica Del Pie",
     "series": [
       {
-        "value": 50,
-        "name": "Enero"
+        "value": 417,
+        "name": "Septiembre"
       },
       {
-        "value": 75,
-        "name": "Febrero"
+        "value": 356,
+        "name": "Octubre"
       },
       {
-        "value": 80,
-        "name": "Marzo"
+        "value": 381,
+        "name": "Noviembre"
       },
-      {
-        "value": 55,
-        "name": "Abril"
-      },{
-        "value": 100,
-        "name": "Mayo"
-      },
-      {
-        "value": 80,
-        "name": "Junio"
-      },
-      {
-        "value": 56,
-        "name": "Julio"
-      }
+      
     ]
   }
 ]
 
-  constructor() { }
+
+  constructor(public tomarhoraService:TomarhoraService) { }
+
   onSelect(data:any): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
@@ -115,6 +107,14 @@ export class DashboardComponent implements OnInit {
 }
 
   ngOnInit(): void {
+    this.getHoratomada();
+  }
+
+  getHoratomada(){
+    this.tomarhoraService.getHoraTomada().subscribe((res)=>{
+      this.hora=res;
+      console.log(this.hora)
+    })
   }
 
 }

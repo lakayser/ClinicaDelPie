@@ -2,7 +2,7 @@
     <section class="">
       <div class="container text-center">
         <h1>Bienvenido </h1>
-        <h1>NOMBRE DE EMPLEADO</h1>
+        
         <h1>este es el estado actual de la clinica</h1>
         <div class="row row-30 align-items-center">
           <div class="col-md-6">
@@ -11,38 +11,7 @@
         </div>
       </div>
     </section>
-    <section class="section section-lg">
-      <div class="container text-center ">
-  
-        <div class="row mini">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-2 burbuja" style="background-color: #84b1f8;">
-            <h1>14</h1><span class="h5">HORAS DE HOY</span>
-          </div>
-          <div class="col-md-1">
-          </div>
-  
-          <div class="col-md-2 ">
-  
-          </div>
-  
-          <div class="col-md-1">
-  
-          </div>
-          <div class="col-md-2 burbuja" style="background-color: 
-          #bee9c8;">
-  
-    
-  <h1>3</h1><span class="h5">NUEVAS CONSULTAS</span>
-  
-  
-          </div>
-  
-        </div>
-  
-      </div>
-    </section>
+
   
     <section class="section section-lg">
       <div class="container text-center ">
@@ -53,37 +22,23 @@
             <h2 class="pt-3"></h2><span class="h2">HOY</span>
             <div class="table-responsive-md">
               <div class="scrollable">
-                <table class="table border-primary">
+                <table class="table border-primary" >
                   <thead>
                     <tr class="table-primary">
                       <th scope="col">Nombre</th>
+                      <th scope="col">Rut</th>
                       <th scope="col">Hora</th>
-                      <th scope="col">Contacto</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>Jose Antonio</td>
-                      <td>09:00-10:00</td>
-                      <td>+59675611352</td>
-                    </tr>
-                    <tr>
-                      <td>Alejandro elcapo</td>
-                      <td>10:00-11:00</td>
-                      <td>59675611352</td>
-                    </tr>
-                    <tr>
-                      <td>Eduardo Lara</td>
-                      <td>13:00-14:00</td>
-                      <td>59675611352</td>
-                    </tr>
-                    <tr>
-                      <td>Guillermo Cardenas</td>
-                      <td>16:00-17:00</td>
-                      <td>59675611352</td>
-                    </tr>
-  
-                  </tbody>
+                  <ng-container *ngFor="let hora of hora">
+                    <tbody *ngFor="let a of hora.horaTomada">
+                      <tr *ngIf="a.dia == 'miércoles' ">
+                        <td>{{hora.nombre}}</td>
+                        <td>{{hora.rut}}</td>
+                        <td>{{a.fecha | date: 'shortTime': 'UTC'}}</td>
+                      </tr>
+                    </tbody>
+                  </ng-container>
                 </table>
               </div>
             </div>
@@ -110,84 +65,31 @@
         <div class="row">
             <div class="col-md-5 burbuja m-5">
     
-              <h2 class="pt-3"></h2><span class="h2">HOY</span>
+              <h2 class="pt-3"></h2><span class="h2">Esta semana</span>
               <div class="table-responsive-md">
                 <div class="scrollable">
                   <table class="table border-primary">
                     <thead>
                       <tr class="table-primary">
                         <th scope="col">Nombre</th>
-                        <th scope="col">Hora</th>
-                        <th scope="col">Contacto</th>
+                        <th scope="col">Rut</th>
+                        <th scope="col">Fecha de reserva</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>Jose Antonio</td>
-                        <td>09:00-10:00</td>
-                        <td>+59675611352</td>
+                    <ng-container *ngFor="let hora of hora">
+                      <tbody *ngFor="let a of hora.horaTomada">
+                        <tr *ngIf="a.semana == 52 ">
+                          <td>{{hora.nombre}}</td>
+                          <td>{{hora.rut}}</td>
+                          <td>{{a.fecha | date: 'mediumDate' }} a las  {{a.fecha | date: 'shortTime': 'UTC'}}</td>
                       </tr>
-                      <tr>
-                        <td>Alejandro elcapo</td>
-                        <td>10:00-11:00</td>
-                        <td>59675611352</td>
-                      </tr>
-                      <tr>
-                        <td>Eduardo Lara</td>
-                        <td>13:00-14:00</td>
-                        <td>59675611352</td>
-                      </tr>
-                      <tr>
-                        <td>Guillermo Cardenas</td>
-                        <td>16:00-17:00</td>
-                        <td>59675611352</td>
-                      </tr>
-    
                     </tbody>
+                    </ng-container>
                   </table>
                 </div>
               </div>
             </div>
-            <div class="col-md-5 burbuja m-5">
-    
-              <h2 class="pt-3"></h2><span class="h2">HOY</span>
-              <div class="table-responsive-md">
-                <div class="scrollable">
-                  <table class="table border-primary">
-                    <thead>
-                      <tr class="table-primary">
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Hora</th>
-                        <th scope="col">Contacto</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Jose Antonio</td>
-                        <td>09:00-10:00</td>
-                        <td>+59675611352</td>
-                      </tr>
-                      <tr>
-                        <td>Alejandro elcapo</td>
-                        <td>10:00-11:00</td>
-                        <td>59675611352</td>
-                      </tr>
-                      <tr>
-                        <td>Eduardo Lara</td>
-                        <td>13:00-14:00</td>
-                        <td>59675611352</td>
-                      </tr>
-                      <tr>
-                        <td>Guillermo Cardenas</td>
-                        <td>16:00-17:00</td>
-                        <td>59675611352</td>
-                      </tr>
-    
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+         
            
           </div>
   

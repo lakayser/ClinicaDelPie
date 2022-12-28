@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Horas } from '../../interface/horas.interface';
 import { TomarhoraService } from '../../../../Servicios/tomarhora.service';
 import { NgForm } from '@angular/forms';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-horas-calendario',
   templateUrl: './horas-calendario.component.html',
@@ -75,9 +75,31 @@ export class HorasCalendarioComponent implements OnInit{
     this.tomarHora.createHoraTomada(this.horaId,form.value)
       .subscribe(form=>{
         console.log(form)
-        this.display = false;
 
-      })
+        this.display = false;
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: form,
+          showConfirmButton: false,
+          timer: 1200,
+          timerProgressBar: true,
+
+          
+        }).then(() => {
+          window.location.reload()});
+
+      },
+      err => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: err.error.message,
+          timer: 2500
+        });
+      }
+        
+      )
   }
 }
 

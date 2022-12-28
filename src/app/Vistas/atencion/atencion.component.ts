@@ -6,7 +6,7 @@ import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, NgForm, Valid
 import { PacienteService } from 'src/app/Servicios/paciente.service';
 import { Paciente } from 'src/app/Modelos/paciente';
 import { Atencion } from 'src/app/Modelos/atencion';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-atencion',
   templateUrl: './atencion.component.html',
@@ -44,7 +44,29 @@ export class AtencionComponent implements OnInit {
   submit(){
     this.atencionService.postAtencion(this.cosa, this.atencionformu.value).subscribe((res)=>{
       console.log(res);
-    })
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: res,
+        showConfirmButton: false,
+        timer: 1200,
+        timerProgressBar: true,
+
+        
+      }).then(() => {
+        this.router.navigate(['/detalles', this.cosa]) });
+
+    },
+    err => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: err.error.message,
+        timer: 2500
+      });
+    }
+      )
+
   }
   getID(id:any){
     this.pacienteService.getPacienteID(id).subscribe((res)=>{
