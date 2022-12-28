@@ -1,3 +1,17 @@
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12 col-lg mt-lg-4 mt-3 fs-4 fw-bold">
+      {{ fechaApp | date: 'MMMM / YYYY' }}
+    </div>
+
+    <div class="col-12 col-lg mt-lg-4 mt-3 fs-5 fw-bold">
+      <i class="pi pi-angle-left" (click)="backSemana()"></i>
+      Semana {{ semana }} 
+      <i class="pi pi-angle-right" (click)="nextSemana()"></i>
+    </div>
+  </div>
+</div>
+
 <app-header-calendario
   [fechaApp]="fechaApp"
   [semana]="semana">

@@ -25,6 +25,7 @@ import { NgForm } from '@angular/forms';
   ]
 })
 export class HorasCalendarioComponent implements OnInit{
+  
   @Input() horas: Horas[] = [];
   @Input() semana: number;
 
